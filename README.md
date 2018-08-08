@@ -10,3 +10,5 @@ A template for using WordPress in a subdirectory managed by Composer.
 1. Point your web root to the `/public` directory
 
 Note: If you're running on production copy `local-config.sample.php` to `production-config.php`.
+
+For more info see this blog series: [Managing Your WordPress Site With Git And Composer](https://deliciousbrains.com/install-wordpress-subdirectory-composer-git-submodule/)
