@@ -2,3 +2,11 @@
 /vendor
 production-config.php
 local-config.php
+/public/wp-content/debug.log
+/public/wp-content/object-cache.php
+/public/wp-content/plugins/*
+!/public/wp-content/plugins/index.php
+/public/wp-content/themes/*
+!/public/wp-content/themes/index.php
+/public/wp-content/uploads/*
+!/public/wp-content/uploads/.gitkeep
