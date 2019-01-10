@@ -16,21 +16,41 @@ if ( file_exists( dirname( __FILE__ ) . '/../production-config.php' ) ) {
     include( dirname( __FILE__ ) . '/../local-config.php' );
 }
 
+// ==================
+// Default DB Charset
+// ==================
+if ( ! defined( 'DB_CHARSET' ) ) {
+    define( 'DB_CHARSET', 'utf8' );   
+}
+
 // ========================
 // Custom Content Directory
 // ========================
-define( 'WP_CONTENT_DIR', dirname( __FILE__ ) . '/wp-content' );
-define( 'WP_CONTENT_URL', 'https://' . $_SERVER['HTTP_HOST'] . '/wp-content' );
+if ( ! defined( 'WP_CONTENT_DIR' ) ) {
+    define( 'WP_CONTENT_DIR', dirname( __FILE__ ) . '/wp-content' );
+}
+
+// ==================
+// Custom Content URL
+// ==================
+if ( ! defined( 'WP_CONTENT_URL' ) && ! empty( $_SERVER['HTTP_HOST'] ) ) {
+    $protocol = ( ( ! empty( $_SERVER['HTTPS'] ) && $_SERVER['HTTPS'] !== 'off' ) || ( isset( $_SERVER['SERVER_PORT'] ) && $_SERVER['SERVER_PORT'] == 443 ) ) ? 'https://' : 'http://';
+    define( 'WP_CONTENT_URL', $protocol . $_SERVER['HTTP_HOST'] . '/wp-content' );
+}
 
 // ===========================
 // Disable WP_DEBUG by default
 // ===========================
-define( 'WP_DEBUG', false );
+if ( ! defined( 'WP_DEBUG' ) ) {
+    define( 'WP_DEBUG', false );
+}
 
 // =========================
 // Disable automatic updates
 // =========================
-define( 'AUTOMATIC_UPDATER_DISABLED', false );
+if ( ! defined( 'AUTOMATIC_UPDATER_DISABLED' ) ) {
+    define( 'AUTOMATIC_UPDATER_DISABLED', false );
+}
 
 // =======================
 // Load WordPress Settings
