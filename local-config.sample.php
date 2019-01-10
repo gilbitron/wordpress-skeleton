@@ -1,12 +1,16 @@
 <?php
-define( 'DB_NAME', '' );
-define( 'DB_USER', '' );
+/**
+ * Rename this file to local-config.php (or production-config.php)
+ */
+
+define( 'DB_NAME',     '' );
+define( 'DB_USER',     '' );
 define( 'DB_PASSWORD', '' );
-define( 'DB_HOST', 'localhost' );
+define( 'DB_HOST',     'localhost' );
 
 @ini_set( 'display_errors', E_ALL );
-define( 'WP_DEBUG', true );
-define( 'WP_DEBUG_LOG', true );
+define( 'WP_DEBUG',         true );
+define( 'WP_DEBUG_LOG',     true );
 define( 'WP_DEBUG_DISPLAY', false );
 
 // See https://api.wordpress.org/secret-key/1.1/salt/
